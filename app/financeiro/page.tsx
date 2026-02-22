@@ -119,23 +119,23 @@ export default function FinancePage() {
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="p-6 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <h3 className="font-bold text-slate-800">Histórico de Transações</h3>
-          <div className="flex gap-2">
-            <div className="relative">
+          <div className="flex gap-2 w-full md:w-auto">
+            <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
-              <input type="text" placeholder="Buscar..." className="pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" />
+              <input type="text" placeholder="Buscar..." className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
           </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
-              <tr className="bg-slate-50 text-slate-400 text-xs font-bold uppercase tracking-wider">
-                <th className="px-6 py-4">Data</th>
-                <th className="px-6 py-4">Descrição</th>
-                <th className="px-6 py-4">Categoria</th>
-                <th className="px-6 py-4">Valor</th>
-                <th className="px-6 py-4">Status</th>
-                <th className="px-6 py-4 text-right">Ações</th>
+              <tr className="bg-slate-50 text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                <th className="px-4 md:px-6 py-4 whitespace-nowrap">Data</th>
+                <th className="px-4 md:px-6 py-4 whitespace-nowrap">Descrição</th>
+                <th className="px-4 md:px-6 py-4 whitespace-nowrap">Categoria</th>
+                <th className="px-4 md:px-6 py-4 whitespace-nowrap">Valor</th>
+                <th className="px-4 md:px-6 py-4 whitespace-nowrap">Status</th>
+                <th className="px-4 md:px-6 py-4 text-right whitespace-nowrap">Ações</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -148,24 +148,24 @@ export default function FinancePage() {
               ) : (
                 transactions.slice().reverse().map((t) => (
                   <tr key={t.id} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm text-slate-600" suppressHydrationWarning>
+                    <td className="px-4 md:px-6 py-4 text-sm text-slate-600 whitespace-nowrap" suppressHydrationWarning>
                       {new Date(t.date).toLocaleDateString('pt-BR')}
                     </td>
-                    <td className="px-6 py-4 font-bold text-slate-900">{t.description}</td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 md:px-6 py-4 font-bold text-slate-900 whitespace-nowrap">{t.description}</td>
+                    <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                       <span className="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg uppercase">
                         {t.category}
                       </span>
                     </td>
-                    <td className={`px-6 py-4 font-bold ${t.type === TransactionType.INCOME ? 'text-emerald-600' : 'text-red-600'}`}>
+                    <td className={`px-4 md:px-6 py-4 font-bold whitespace-nowrap ${t.type === TransactionType.INCOME ? 'text-emerald-600' : 'text-red-600'}`}>
                       {t.type === TransactionType.INCOME ? '+' : '-'} {formatCurrency(t.amount)}
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                       <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-[10px] font-bold rounded-lg uppercase">
                         {t.status === 'PAGO' ? 'PAGO' : 'PENDENTE'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-right">
+                    <td className="px-4 md:px-6 py-4 text-right">
                       <button
                         onClick={() => deleteTransaction(t.id)}
                         className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
