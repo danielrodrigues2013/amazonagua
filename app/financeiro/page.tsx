@@ -63,16 +63,16 @@ export default function FinancePage() {
           <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Financeiro</h1>
           <p className="text-slate-500">Controle de entradas, saídas e fluxo de caixa.</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
           <button
             onClick={() => exportToCSV(transactions, 'financeiro')}
-            className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-all"
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-all text-sm"
           >
             <Download size={18} /> Exportar
           </button>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-900/20 hover:bg-blue-700 transition-all"
+            className="flex items-center justify-center gap-2 px-6 py-2 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-900/20 hover:bg-blue-700 transition-all text-sm"
           >
             <Plus size={20} /> Nova Transação
           </button>
@@ -189,7 +189,7 @@ export default function FinancePage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-8"
+            className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-6 md:p-8"
           >
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Nova Transação</h2>
             <form onSubmit={handleSave} className="space-y-4">
