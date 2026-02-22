@@ -98,6 +98,7 @@ export default function Sidebar() {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={() => isMobile && setIsOpen(false)}
                 className={cn(
                   "flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group",
                   isActive
@@ -118,7 +119,11 @@ export default function Sidebar() {
         </nav>
 
         <div className="p-4 border-t border-slate-800 space-y-2">
-          <Link href="/configuracoes" className="flex items-center gap-3 px-3 py-3 w-full rounded-xl hover:bg-slate-900 transition-colors group text-slate-400">
+          <Link
+            href="/configuracoes"
+            onClick={() => isMobile && setIsOpen(false)}
+            className="flex items-center gap-3 px-3 py-3 w-full rounded-xl hover:bg-slate-900 transition-colors group text-slate-400"
+          >
             <Settings size={22} className="group-hover:text-white transition-colors" />
             <span className={cn(
               "font-medium transition-opacity duration-200",
