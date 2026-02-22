@@ -1,0 +1,7 @@
+{
+  "name": "Amazon Água",
+  "description": "Sistema completo para gerenciamento de depósitos de água e gás: estoque, vendas, entregas e financeiro.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
