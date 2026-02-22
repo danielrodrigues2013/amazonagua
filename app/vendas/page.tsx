@@ -136,9 +136,9 @@ export default function SalesPage() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-[calc(100vh-120px)]">
+    <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 min-h-[calc(100vh-120px)]">
       {/* Product Selection */}
-      <div className="lg:col-span-2 flex flex-col gap-6 overflow-hidden">
+      <div className="lg:col-span-2 flex flex-col gap-6 lg:overflow-hidden">
         <header>
           <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Nova Venda</h1>
           <p className="text-slate-500">Selecione os produtos para o carrinho.</p>

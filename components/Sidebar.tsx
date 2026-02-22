@@ -65,9 +65,9 @@ export default function Sidebar() {
       {/* Mobile Toggle */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 p-2 bg-slate-900 text-white rounded-lg md:hidden"
+        className="fixed top-4 left-4 z-[60] p-2.5 bg-slate-900 border border-slate-800 text-white rounded-xl md:hidden shadow-lg active:scale-95 transition-transform"
       >
-        {isOpen ? <X size={20} /> : <Menu size={20} />}
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       <aside
@@ -78,8 +78,8 @@ export default function Sidebar() {
             : (isOpen ? "w-[260px]" : "w-[80px]")
         )}
       >
-        <div className="p-6 flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shrink-0">
+        <div className="p-6 pt-20 md:pt-6 flex items-center gap-3">
+          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shrink-0 relative">
             <Droplets size={24} className="absolute translate-x-[-4px] translate-y-[-4px]" />
             <Flame size={24} className="absolute translate-x-[4px] translate-y-[4px] text-orange-400" />
           </div>
