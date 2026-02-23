@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import {
   LayoutDashboard,
   Package,
@@ -14,8 +15,6 @@ import {
   Settings,
   Menu,
   X,
-  Droplets,
-  Flame,
   History,
   LogOut
 } from 'lucide-react';
@@ -78,17 +77,16 @@ export default function Sidebar() {
             : (isOpen ? "w-[260px]" : "w-[80px]")
         )}
       >
-        <div className="p-6 pt-20 md:pt-6 flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shrink-0 relative">
-            <Droplets size={24} className="absolute translate-x-[-4px] translate-y-[-4px]" />
-            <Flame size={24} className="absolute translate-x-[4px] translate-y-[4px] text-orange-400" />
+        <div className="p-6 pt-20 md:pt-6 flex items-center justify-center overflow-hidden">
+          <div className="relative flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={isOpen || isMobile ? 120 : 40}
+              height={isOpen || isMobile ? 120 : 40}
+              className="object-contain transition-all duration-200"
+            />
           </div>
-          <span className={cn(
-            "font-bold text-xl text-white tracking-tight truncate transition-opacity duration-150",
-            (!isOpen && !isMobile) ? "opacity-0" : "opacity-100"
-          )}>
-            Amazon<span className="text-blue-500"> Água</span>
-          </span>
         </div>
 
         <nav className="flex-1 px-4 space-y-2 mt-4 overflow-y-auto custom-scrollbar">

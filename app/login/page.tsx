@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Droplets, Flame, User, Lock, ArrowRight, AlertCircle } from 'lucide-react';
+import Image from 'next/image';
+import { User, Lock, ArrowRight, AlertCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
@@ -50,14 +51,18 @@ export default function LoginPage() {
                 className="w-full max-w-[420px] relative z-10"
             >
                 <div className="bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-8 rounded-[32px] shadow-2xl">
-                    <div className="flex flex-col items-center mb-10">
-                        <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white mb-4 shadow-lg shadow-blue-500/20 relative">
-                            <Droplets size={32} className="absolute translate-x-[-6px] translate-y-[-6px]" />
-                            <Flame size={32} className="absolute translate-x-[6px] translate-y-[6px] text-orange-400" />
+                    <div className="flex flex-col items-center mb-10 mt-6">
+                        <div className="relative mb-2">
+                            <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full" />
+                            <Image
+                                src="/logo.png"
+                                alt="Amazon Água Logo"
+                                width={200}
+                                height={200}
+                                className="relative z-10 drop-shadow-2xl"
+                                priority
+                            />
                         </div>
-                        <h1 className="text-2xl font-bold text-white tracking-tight">
-                            Amazon<span className="text-blue-500"> Água</span>
-                        </h1>
                         <p className="text-slate-400 mt-2 text-sm">Controle de Vendas e Estoque</p>
                     </div>
 
