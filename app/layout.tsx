@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: 'Amazon Água',
   description: 'Sistema completo para gerenciamento de depósitos de água e gás.',
   icons: {
-    icon: '/icon.svg',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 };
 
